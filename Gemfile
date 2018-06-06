@@ -12,6 +12,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
