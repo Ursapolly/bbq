@@ -18,35 +18,24 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      redirect_to @event, notice: 'Ура! Событие создано!'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.update(event_params)
+      redirect_to @event, notice: 'Событие отредактировано!'
+    else
+      render :edit
     end
   end
 
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+     redirect_to events_url, notice: 'Event was successfully destroyed.'
   end
 
   private
@@ -55,11 +44,11 @@ class EventsController < ApplicationController
     @event = current_user.events.find(params[:id])
   end
 
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def event_params
-      params.require(:event).permit(:title, :address, :datetime, :description)
-    end
+  def event_params
+    params.require(:event).permit(:title, :address, :datetime, :description)
+  end
 end

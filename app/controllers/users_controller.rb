@@ -6,19 +6,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit;
-  end
+  def edit; end
 
   def update
-    respond_to do |format|
       if @user.update(user_params)
-        format.html {redirect_to @user, notice: 'User was successfully updated.'}
-        format.json {render :show, status: :ok, location: @user}
+        redirect_to @user, notice: 'Профиль обновлён'
       else
-        format.html {render :edit}
-        format.json {render json: @user.errors, status: :unprocessable_entity}
+        render :edit
       end
-    end
   end
 
   private
