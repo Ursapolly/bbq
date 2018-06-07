@@ -14,7 +14,9 @@
           <%= render partial: 'events/event', collection: @user.events %>
         </div>
       <% else %>
-        <p class="buffer-top">Пользователь пока не организовал(а) событий. :(</p>
+        <p class="buffer-top">
+          <%= "#{@user.name} пока не организовал(а) событий. :(" %>
+        </p>
       <% end %>
     </div>
   </div>

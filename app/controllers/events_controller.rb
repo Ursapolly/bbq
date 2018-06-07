@@ -34,8 +34,10 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.destroy
-     redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
+    if @event.delete
+      @event.destroy
+      redirect_to user_url(current_user), notice: I18n.t('controllers.events.destroyed')
+    end
   end
 
   private

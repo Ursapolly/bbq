@@ -19,8 +19,13 @@ ru:
       created: 'Ура! Событие создано!'
       updated: 'Событие обновлено!'
       destroyed: 'Событие удалено!'
+      confirm_deletion: 'Вы уверены?'
     users:
       updated: 'Профиль обновлён!'
   app:
     name: 'Барбекю'
     company: 'Полина Яночкина'
+  error:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
