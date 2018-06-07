@@ -1,7 +1,15 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_parameters_for_reg, if: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   helper_method :current_user_can_edit?
+
+  def configure_parameters_for_reg
+    devise_parameter_sanitizer.permit(
+        :sign_up,
+        keys: [:email, :name, :password]
+    )
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(
