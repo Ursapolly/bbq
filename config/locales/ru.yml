@@ -14,6 +14,12 @@ ru:
         address: 'Где'
         datetime: 'Когда'
         description: 'Пару слов о событии'
+      comment:
+        body: 'Что вы об этом думаете?'
+        user_name: 'Ваше имя'
+      subscription:
+        user_name: 'Ваше имя'
+        user_email: 'Ваша почта'
   controllers:
     events:
       created: 'Ура! Событие создано!'
@@ -26,6 +32,10 @@ ru:
       destroyed: 'Комментарий удалён!'
       created: 'Комментарий добавлен!'
       error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписались на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
   app:
     name: 'Барбекю'
     company: 'Полина Яночкина'
@@ -36,3 +46,6 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Точно удалить комментарий?'
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Точно удалить подписку?'

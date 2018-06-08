@@ -1,13 +1,16 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: [:show]
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :set_current_user_event, only: %i[edit update destroy]
 
   def index
     @events = Event.all
   end
 
-  def show; end
+  def show
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
+  end
 
   def new
     @event = current_user.events.build
@@ -36,7 +39,7 @@ class EventsController < ApplicationController
   def destroy
     if @event.delete
       @event.destroy
-      redirect_to user_url(current_user), notice: I18n.t('controllers.events.destroyed')
+      redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
     end
   end
 
