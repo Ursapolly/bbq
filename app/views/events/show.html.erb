@@ -21,7 +21,7 @@
                           class: 'btn btn-primary mr' %>
               <%= link_to 'Удалить', event_path(@event), method: :delete,
                           class: 'btn btn-danger',
-                          data: { confirm: t('controllers.events.confirm_deletion') } %>
+                          data: {confirm: t('controllers.events.confirm_deletion')} %>
             </div>
             </div>
           <% end %>
@@ -33,7 +33,7 @@
     <div class="col-md-8">
       <div class="event-comments buffer-top">
         <%= render partial: 'comments/form',
-                   locals: { comment: @new_comment || @event.comments.build } %>
+                   locals: {comment: @new_comment || @event.comments.build} %>
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
@@ -56,13 +56,15 @@
           </p>
         </div>
       </div>
+      <% if user_can_subscribe?(@event) %>
       <div class="event-subscription-form">
         <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {
-              subscription: @new_subscription || @event.subscriptions.build
-          } %>
-        </div>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: {
+                subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
