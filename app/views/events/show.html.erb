@@ -28,20 +28,25 @@
           </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-8">
+      <div class="event-photos">
+        <div class="event-photos-gallery">
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+        </div>
+        <div class="event-photo-form">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      </div>
       <div class="event-comments buffer-top">
         <%= render partial: 'comments/form',
                    locals: {comment: @new_comment || @event.comments.build} %>
-
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
                      collection: @event.comments.except(@new_comment) %>
         </div>
       </div>
     </div>
-
     <div class="col-md-4">
       <div class="event-owner">
         <h4>Зовет:</h4>
@@ -57,14 +62,14 @@
         </div>
       </div>
       <% if user_can_subscribe?(@event) %>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
                 subscription: @new_subscription || @event.subscriptions.build
             } %>
           </div>
-        <% end %>
+      <% end %>
       </div>
     </div>
   </div>

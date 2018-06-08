@@ -53,7 +53,8 @@
 .event-owner,
 .event-comments,
 .event-subscriptions,
-.event-subscription-form {
+.event-subscription-form,
+.event-photo {
   color: rgba(44, 44, 44, 0.78);
 }
 

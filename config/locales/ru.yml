@@ -9,6 +9,7 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        avatar: 'Аватарка'
       event:
         title: 'Что'
         address: 'Где'
@@ -36,6 +37,10 @@ ru:
       created: 'Вы подписались на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'С фоткой что-то не то'
+      created: 'Фотка добавлена'
+      destroyed: 'Фотка удалена'
   app:
     name: 'Барбекю'
     company: 'Полина Яночкина'
