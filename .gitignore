@@ -34,3 +34,5 @@
 */.DS_Store
 
 public/uploads
+
+config/initializers/env_vars.rb
