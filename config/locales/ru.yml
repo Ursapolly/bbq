@@ -72,4 +72,11 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
-
+  devise:
+    shared_links:
+      log_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+      forgot_password: 'Забыли пароль?'
+      confirmation_instruction: 'Не получили инструкции для подтверждения?'
+      unlock_instruction: 'Не получили инструкции по разблокировке?'
+      log_in_with: 'Войти через'
