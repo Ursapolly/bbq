@@ -16,6 +16,7 @@ ru:
         address: 'Где'
         datetime: 'Когда'
         description: 'Пару слов о событии'
+        pincode: 'Пинкод доступа'
       comment:
         body: 'Что вы об этом думаете?'
         user_name: 'Ваше имя'
@@ -30,6 +31,7 @@ ru:
       updated: 'Событие обновлено!'
       destroyed: 'Событие удалено!'
       confirm_deletion: 'Вы уверены?'
+      wrong_pincode: 'Неверный пинкод!'
     users:
       updated: 'Профиль обновлён!'
     comments:
@@ -80,3 +82,4 @@ ru:
       confirmation_instruction: 'Не получили инструкции для подтверждения?'
       unlock_instruction: 'Не получили инструкции по разблокировке?'
       log_in_with: 'Войти через'
+
