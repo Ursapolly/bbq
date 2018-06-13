@@ -58,3 +58,7 @@
   color: rgba(44, 44, 44, 0.78);
 }
 
+.event-photo {
+  float: left;
+  display: inline;
+}

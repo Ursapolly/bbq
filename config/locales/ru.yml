@@ -46,6 +46,7 @@ ru:
       error: 'С фоткой что-то не то'
       created: 'Фотка добавлена'
       destroyed: 'Фотка удалена'
+      destroy_confirm: 'Вы уверены?'
   app:
     name: 'Барбекю'
     company: 'Полина Яночкина'
