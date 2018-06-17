@@ -32,6 +32,7 @@ ru:
       destroyed: 'Событие удалено!'
       confirm_deletion: 'Вы уверены?'
       wrong_pincode: 'Неверный пинкод!'
+      forbidden: 'Ой, нельзя удалять чужое событие!'
     users:
       updated: 'Профиль обновлён!'
     comments:
@@ -42,6 +43,7 @@ ru:
       created: 'Вы подписались на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+      forbidden: 'Нельзя так делать :)'
     photos:
       error: 'С фоткой что-то не то'
       created: 'Фотка добавлена'
