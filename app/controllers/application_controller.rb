@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   helper_method :current_user_can_edit?
-  helper_method :user_cannot_subscribe?
+  helper_method :user_can_subscribe?
+  helper_method :user_subscribed?
 
   def configure_parameters_for_reg
     devise_parameter_sanitizer.permit(
@@ -28,7 +29,11 @@ class ApplicationController < ActionController::Base
     )
   end
 
-  def user_cannot_subscribe?(event)
-    event.user == current_user
+  def user_can_subscribe?(event)
+    event.user != current_user
+  end
+
+  def user_subscribed?
+    true if Subscription.where(user: current_user).exists? && user_signed_in?
   end
 end
