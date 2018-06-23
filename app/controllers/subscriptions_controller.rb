@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
     if user_can_subscribe?(@event) && @new_subscription.save
-      EventMailer.subscription(@event, @new_subscription).deliver_now
+      EventMailer.subscription(@event, @new_subscription).deliver_later
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
       redirect_to @event, alert: I18n.t('controllers.subscriptions.forbidden')

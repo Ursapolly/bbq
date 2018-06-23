@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'twitter-bootstrap-rails'
+gem 'resque', '~> 1.27', '>= 1.27.4'
 
 group :production do
   gem 'pg'
