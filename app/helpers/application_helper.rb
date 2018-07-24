@@ -17,7 +17,6 @@ module ApplicationHelper
 
   def event_photo(event)
     photos = event.photos.persisted
-
     if photos.any?
       photos.sample.photo.url
     else
@@ -27,7 +26,6 @@ module ApplicationHelper
 
   def event_thumb(event)
     photos = event.photos.persisted
-
     if photos.any?
       photos.sample.photo.thumb.url
     else

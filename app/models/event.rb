@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   validates :user, presence: true
-  validates :title, presence: true, length: {maximum: 255}
+  validates :title, presence: true, length: { maximum: 255 }
   validates :address, presence: true
   validates :datetime, presence: true
 
@@ -15,8 +15,7 @@ class Event < ApplicationRecord
     (subscribers + [user]).uniq
   end
 
-  def pincode_valid?(pin2chek)
-    pincode == pin2chek
+  def pincode_valid?(pin2check)
+    pincode == pin2check
   end
 end
-

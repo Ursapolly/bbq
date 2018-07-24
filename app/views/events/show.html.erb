@@ -65,14 +65,14 @@
         </div>
       </div>
       <% if user_can_subscribe?(@event) && !user_subscribed? %>
-          <div class="event-subscription-form">
-            <h4>Я пойду:</h4>
-            <div>
-              <%= render partial: 'subscriptions/form', locals: {
-                  subscription: @new_subscription || @event.subscriptions.build
-              } %>
-            </div>
-        <% end %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: {
+                subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
+      <% end %>
       </div>
     </div>
   </div>
